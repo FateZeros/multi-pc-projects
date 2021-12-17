@@ -1,3 +1,3 @@
 <template>
-  <div>我是页面1</div>
+  <div id="app">project1</div>
 </template>

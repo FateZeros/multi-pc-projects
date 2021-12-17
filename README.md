@@ -9,7 +9,7 @@ vue 多项目框架搭建
 ## 项目运行
 
 ```bash
-yarn serve <projectName>
+yarn serve --page=<projectName>
 // or
-npm run serve <projectName>
+npm run serve --page=<projectName>
 ```

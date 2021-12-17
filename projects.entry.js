@@ -18,7 +18,7 @@ function getDefaultProjectEntry (projectName, title, template = 'public/index.ht
  * porject1 - 项目1
  */
 const projectEntrys = {
-  porject1: {
+  project1: {
     ...getDefaultProjectEntry('project1', '项目1')
   }
 }
