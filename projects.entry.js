@@ -19,7 +19,14 @@ function getDefaultProjectEntry (projectName, title, template = 'public/index.ht
  */
 const projectEntrys = {
   project1: {
-    ...getDefaultProjectEntry('project1', '项目1')
+    ...getDefaultProjectEntry('project1', '项目1'),
+    port: 8002,
+    proxyTarget: 'http://ceshi.com'
+  },
+  project2: {
+    ...getDefaultProjectEntry('project2', '项目2'),
+    port: 8003,
+    proxyTarget: 'http://ceshi.com'
   }
 }
 
