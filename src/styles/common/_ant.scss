@@ -1,0 +1,28 @@
+$height: px2rem(32px);
+
+%diy-btn-size {
+  height: $height;
+  line-height: calc(#{$height} - 0.02rem);
+}
+
+.diy-btn-size {
+  @extend %diy-btn-size;
+}
+
+%diy-btn {
+  @extend %diy-btn-size;
+  font-size: 0.16rem;
+  letter-spacing: 0.01rem;
+  border-radius: 0;
+}
+
+.diy-btn {
+  @extend %diy-btn;
+  border-color: #e4e4e4;
+  &:hover,
+  &:focus {
+    border: 1px solid #ccc;
+    background-color: rgb(2, 1, 1);
+    box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.19);
+  }
+}

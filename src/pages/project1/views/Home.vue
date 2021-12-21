@@ -1,13 +1,14 @@
 <template>
-  <div :class="$style.home_wrap">
+  <div class="home-wrap">
     主页
-    <a-button>提交</a-button>
+    <a-button class="diy-btn">提交</a-button>
   </div>
 </template>
 
-<style module>
-.home_wrap {
+<style lang="scss" scoped>
+.home-wrap {
   width: 100%;
   height: 100%;
+  font-size: px2rem(12px);
 }
 </style>

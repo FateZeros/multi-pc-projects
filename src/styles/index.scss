@@ -1,0 +1,11 @@
+@import './common/_function';
+@import './common/_mixin';
+@import './common/_ant';
+@import './common/var';
+
+html,
+body,
+#app {
+  overflow: hidden;
+  font-family: 'PingFangSC', 'PingFangSC-Regular';
+}

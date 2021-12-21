@@ -3,8 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import initAntd from '@/utils/initAntd'
+/** 引入 rem */
+import '@/utils/rem.js'
 
+/** 引入antd-design-vue */
+import initAntd from '@/utils/initAntd'
 initAntd(Vue)
 
 Vue.config.productionTip = false
