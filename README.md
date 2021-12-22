@@ -8,7 +8,7 @@ vue 多项目框架搭建，旨在抽离项目中的一些复用组件。
 - [x] 统一 eslint
 - [x] 复用组件库
 - [ ] 自定义项目布局
-  - [ ] 常规布局 1
+  - [ ] 常规布局
   - [ ] 常规布局 2
 - [ ] 自定义路由 - 权限路由
 - [ ] 按钮权限
@@ -23,7 +23,7 @@ yarn serve --page=<projectName>
 
 在 `src/pages/<porjectName>` 中进行配置:
 
-1. 在 `main.js` 配置 `rem`、`antd-design-vue`
+1. 在 `main.js` 配置 `rem`,`antd-design-vue`, `permission`
 2. 在 `config` 文件中作项目相关配置
 
 ## 项目相关截图

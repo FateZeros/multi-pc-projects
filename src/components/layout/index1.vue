@@ -1,6 +1,6 @@
 <template>
-  <div>
-    111
+  <div class="app-layout-wrap">
+    1
   </div>
 </template>
 
@@ -10,3 +10,10 @@ export default {
   name: 'Layout1'
 }
 </script>
+
+<style lang="scss" scoped>
+.app-layout-wrap {
+  width: 100%;
+  height: 100%;
+}
+</style>

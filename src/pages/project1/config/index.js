@@ -6,6 +6,6 @@ module.exports = {
    * 项目布局 projectLayout
    * 路由动画 routeAnimation
    */
-  layout: 'index1',
+  layout: 'index',
   routeAnimation: true
 }
