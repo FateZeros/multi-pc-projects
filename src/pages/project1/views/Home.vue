@@ -9,6 +9,6 @@
 .home-wrap {
   width: 100%;
   height: 100%;
-  font-size: px2rem(12px);
+  font-size: rem(12px);
 }
 </style>

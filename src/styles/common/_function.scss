@@ -5,6 +5,6 @@
                 1、px -> rem
 ---------------------------------------------*/
 // 75px之前是按照1440尺寸，这里以1920为基准,量多少写多少
-@function px2rem($px) {
+@function rem($px) {
   @return math.div(round(math.div($px, 100px) * 100), 100) * 1rem;
 }
