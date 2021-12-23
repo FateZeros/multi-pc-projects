@@ -33,9 +33,9 @@ module.exports = {
   },
   configureWebpack: config => {
     config.resolve.alias = {
-      '@': path.join(__dirname, './src'),
+      '@': path.join(__dirname, './src')
       // 优化 ant-desgin icons 打包体积太大问题
-      '@ant-design/icons/lib/dist$': path.join(__dirname, './src/assets/icons')
+      // '@ant-design/icons/lib/dist$': path.join(__dirname, './src/assets/icons')
     }
   },
   chainWebpack: config => {

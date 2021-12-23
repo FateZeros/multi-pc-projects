@@ -7,3 +7,13 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* --------------------------------------------
+flex布局
+---------------------------------------------*/
+@mixin flex($row: row, $justify-content: flex-start, $align-items: flex-start) {
+  align-items: $align-items;
+  display: flex;
+  flex-flow: $row nowrap;
+  justify-content: $justify-content;
+}

@@ -17,7 +17,9 @@ import {
   DatePicker,
   Popover,
   Table,
-  Tree
+  Tree,
+  Row,
+  Col
 } from 'ant-design-vue'
 
 function initAntd (Vue) {
@@ -39,6 +41,8 @@ function initAntd (Vue) {
   Vue.use(Table)
   Vue.use(Tree)
   Vue.use(Switch)
+  Vue.use(Row)
+  Vue.use(Col)
 }
 
 export default initAntd

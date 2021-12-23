@@ -1,5 +1,6 @@
-$height: rem(32px);
+$height: rem(40px);
 
+/*--------------- Button ---------------*/
 %diy-btn-size {
   height: $height;
   line-height: calc(#{$height} - 0.02rem);
@@ -24,5 +25,90 @@ $height: rem(32px);
     border: 1px solid #ccc;
     background-color: rgb(2, 1, 1);
     box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.19);
+  }
+}
+
+/*--------------- Input ---------------*/
+%diy-input-size {
+  height: $height;
+  line-height: $height;
+
+  ::v-deep {
+    .ant-input {
+      border-radius: 0;
+      height: 100%;
+    }
+
+    .ant-input-group {
+      @include flex(row, center, center);
+      height: $height;
+      line-height: 1;
+      // overflow: hidden;
+    }
+
+    .ant-input-group-addon {
+      @include flex(row, center, center);
+      border-radius: 0;
+      height: 100%;
+      width: auto;
+      padding: 0;
+      border: 0;
+
+      .ant-btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        // border: 0;
+        height: 100%;
+        line-height: $height;
+      }
+    }
+  }
+}
+
+.diy-input {
+  @extend %diy-input-size;
+  border-radius: 0;
+  &::placeholder {
+    font-size: rem(16px);
+    font-weight: 400;
+    color: #667799;
+  }
+  ::-webkit-input-placeholder {
+    color: #667799 !important;
+  }
+  .ant-input {
+    height: 100%;
+  }
+}
+
+.diy-textarea {
+  border-radius: 0;
+}
+
+/*--------------- InputSearch ---------------*/
+.diy-input-search {
+  @extend %diy-input-size;
+}
+
+/*--------------- InputNumber ---------------*/
+.diy-input-number {
+  @extend %diy-input-size;
+  border-radius: 0;
+
+  .ant-input-number-input {
+    height: $height;
+  }
+}
+
+/*
+* 全局样式 慎改！！
+*/
+::v-deep {
+  .ant-form-item {
+    // margin-bottom: 0.16rem;
+  }
+
+  .ant-form-explain {
+    font-size: rem(12px);
   }
 }
