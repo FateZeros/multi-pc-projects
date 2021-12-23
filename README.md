@@ -22,10 +22,12 @@ yarn serve --page=<projectName>
 
 ### 项目相关配置
 
-在 `src/pages/<porjectName>` 中进行配置:
+1.在 `src/config` 中进行全局项目配置：
 
-1. 在 `main.js` 配置 `rem`,`antd-design-vue`, `permission`
-2. 在 `config` 文件中作项目相关配置
+2.在 `src/pages/<porjectName>` 中进行子项目配置:
+
+- 在 `main.js` 配置 `rem`, `antd-design-vue`, `permission`
+- 在 `config` 文件中作项目相关配置
 
 ## 项目相关截图
 

@@ -11,6 +11,11 @@ import './permission'
 
 /** 引入antd-design-vue */
 import initAntd from '@/utils/init-antd'
+
+/** mock 数据 */
+
+import '../../../mock'
+
 initAntd(Vue)
 /* ------------ 动态引入模块 End -------------- */
 

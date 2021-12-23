@@ -1,8 +1,8 @@
 import axios from 'axios'
+const projectConfig = require('@/config')
 
 // create an axios instance
 const service = axios.create({
-  // baseURL, // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 1000 * 5 // request timeout
 })
@@ -11,6 +11,10 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // do something before request is sent
+    config.headers = {}
+    if (projectConfig.isMock) {
+      config.baseURL = '/mock'
+    }
     return config
   },
   error => {
