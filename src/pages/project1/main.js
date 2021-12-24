@@ -8,12 +8,9 @@ import store from './store'
 import '@/utils/rem.js'
 /** 引入 permission */
 import './permission'
-
 /** 引入antd-design-vue */
 import initAntd from '@/utils/init-antd'
-
 /** mock 数据 */
-
 import '../../../mock'
 
 initAntd(Vue)

@@ -8,5 +8,14 @@ export default {
       method: 'post',
       data: params
     })
+  },
+
+  // 退出登录
+  logout(params) {
+    return service({
+      url: '/api/logout',
+      method: 'post',
+      data: params
+    })
   }
 }

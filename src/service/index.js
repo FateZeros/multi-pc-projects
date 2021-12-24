@@ -15,6 +15,7 @@ service.interceptors.request.use(
     if (projectConfig.isMock) {
       config.baseURL = '/mock'
     }
+    // console.log(config, '========= 请求参数 =========')
     return config
   },
   error => {
@@ -27,6 +28,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
+    // console.log(res, '====== 接口返回参数 ========')
     return res
   },
   error => {

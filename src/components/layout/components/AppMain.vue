@@ -17,8 +17,13 @@ export default {
 
   data() {
     return {
-      cachedViews: [],
-      key: []
+      cachedViews: []
+    }
+  },
+
+  computed: {
+    key() {
+      return this.$route.path
     }
   }
 }

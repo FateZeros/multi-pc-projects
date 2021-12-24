@@ -9,8 +9,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    // component: () => import('@/components/layout/index1.vue')
-    component: () => import(`@/components/layout/${config.layout}.vue`)
+    redirect: '/login'
   },
   {
     path: '/login',
@@ -19,6 +18,22 @@ const routes = [
     meta: {
       title: '登录'
     }
+  },
+  {
+    path: '/home',
+    name: 'home',
+    redirect: '/home/dash-board',
+    component: () => import(`@/components/layout/${config.layout}.vue`),
+    children: [
+      {
+        path: '/home/dash-board',
+        name: 'home-dashboard',
+        component: () => import('@/pages/project1/views/dash-board'),
+        meta: {
+          title: '首页'
+        }
+      }
+    ]
   }
 ]
 

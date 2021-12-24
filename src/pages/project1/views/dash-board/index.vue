@@ -1,7 +1,10 @@
 <template>
   <div class="home-wrap">
     主页
-    <a-button class="diy-btn">提交</a-button>
+    <a-button
+      type="primary"
+      class="diy-btn"
+    >提交</a-button>
   </div>
 </template>
 
