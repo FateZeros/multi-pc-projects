@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+/** 引入项目参数 */
+import pageConfig from './config'
 
 /* ------------ 动态引入模块 Start -------------- */
 /** 引入 rem */
@@ -10,12 +12,14 @@ import '@/utils/rem.js'
 import './permission'
 /** 引入antd-design-vue */
 import initAntd from '@/utils/init-antd'
+
 /** mock 数据 */
 import '../../../mock'
 
 initAntd(Vue)
 /* ------------ 动态引入模块 End -------------- */
 
+Vue.prototype.PAGE_CONFIG = pageConfig
 Vue.config.productionTip = false
 
 new Vue({

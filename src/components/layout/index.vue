@@ -1,8 +1,12 @@
 <template>
   <div class="app-layout-wrap">
-    <a-layout-header></a-layout-header>
+    <a-layout-header>
+      <div class="app-header-logo"></div>
+    </a-layout-header>
     <a-layout class="app-layout-content">
-      <a-layout-sider>Sider</a-layout-sider>
+      <a-layout-sider>
+        <Sidebar />
+      </a-layout-sider>
       <a-layout-content>
         <AppMain />
       </a-layout-content>
@@ -11,14 +15,19 @@
 </template>
 
 <script>
-import { AppMain } from './components'
+import { AppMain, Sidebar } from './components'
 
 /** 典型布局 Layout */
 export default {
   name: 'Layout',
 
   components: {
-    AppMain
+    AppMain,
+    Sidebar
+  },
+
+  mounted() {
+    console.log(this.PAGE_CONFIG, '==== 项目配置 ===')
   }
 }
 </script>
@@ -28,6 +37,12 @@ export default {
   width: 100%;
   height: 100%;
 
+  .app-header-logo {
+    width: rem(120px);
+    height: rem(30px);
+    background: hsla(0, 0%, 100%, 0.2);
+  }
+
   .app-layout-content {
     width: 100%;
     height: 100%;
@@ -36,6 +51,8 @@ export default {
   ::v-deep {
     .ant-layout-header {
       background: $primary-header-color;
+      display: flex;
+      align-items: center;
     }
 
     .ant-layout-sider {

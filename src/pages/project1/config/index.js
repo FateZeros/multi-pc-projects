@@ -7,5 +7,10 @@ module.exports = {
    * 路由动画 routeAnimation
    */
   layout: 'index',
-  routeAnimation: true
+  routeAnimation: true,
+
+  // 是否在 header 中显示一级 route
+  showHeaderRoute: false,
+  // 是否显示面包屑
+  showBreadCrumb: true
 }

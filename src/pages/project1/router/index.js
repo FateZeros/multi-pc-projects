@@ -13,27 +13,43 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'login',
     component: Login,
     meta: {
       title: '登录'
     }
   },
   {
-    path: '/home',
-    name: 'home',
-    redirect: '/home/dash-board',
+    path: '/dash-board',
     component: () => import(`@/components/layout/${config.layout}.vue`),
+    meta: {
+      title: '面板'
+    },
+    isMenu: true,
     children: [
       {
-        path: '/home/dash-board',
-        name: 'home-dashboard',
-        component: () => import('@/pages/project1/views/dash-board'),
-        meta: {
-          title: '首页'
-        }
+        path: 'index',
+        name: 'dashboard',
+        component: () => import('@/pages/project1/views/dash-board')
       }
     ]
+  },
+  {
+    path: '/table',
+    component: () => import(`@/components/layout/${config.layout}.vue`),
+    meta: {
+      title: '表格'
+    },
+    isMenu: true,
+    children: [
+      {
+        path: 'index',
+        name: 'dashboard',
+        component: () => import('@/pages/project1/views/dash-board')
+      }
+    ]
+  },
+  {
+    path: '/404'
   }
 ]
 
