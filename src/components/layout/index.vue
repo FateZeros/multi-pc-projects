@@ -56,7 +56,7 @@ export default {
     }
 
     .ant-layout-sider {
-      background: $primary-sider-color;
+      // background: $primary-sider-color;
     }
   }
 }

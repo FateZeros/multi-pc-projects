@@ -19,32 +19,43 @@ const routes = [
     }
   },
   {
-    path: '/dash-board',
+    path: '/home',
+    name: 'home',
     component: () => import(`@/components/layout/${config.layout}.vue`),
-    meta: {
-      title: '面板'
-    },
-    isMenu: true,
+    redirect: '/home/dash-board',
     children: [
       {
-        path: 'index',
+        path: '/home/dash-board',
         name: 'dashboard',
-        component: () => import('@/pages/project1/views/dash-board')
-      }
-    ]
-  },
-  {
-    path: '/table',
-    component: () => import(`@/components/layout/${config.layout}.vue`),
-    meta: {
-      title: '表格'
-    },
-    isMenu: true,
-    children: [
+        component: () => import('@/pages/project1/views/dash-board'),
+        meta: {
+          title: '首页'
+        }
+      },
       {
-        path: 'index',
-        name: 'dashboard',
-        component: () => import('@/pages/project1/views/dash-board')
+        path: '/home/table',
+        name: 'home-table',
+        meta: {
+          title: '表单'
+        },
+        children: [
+          {
+            path: '/home/table/index',
+            name: 'table-index',
+            component: () => import('@/pages/project1/views/table'),
+            meta: {
+              title: '测试table1'
+            }
+          },
+          {
+            path: '/home/table/index2',
+            name: 'table-index2',
+            component: () => import('@/pages/project1/views/table'),
+            meta: {
+              title: '测试table2'
+            }
+          }
+        ]
       }
     ]
   },

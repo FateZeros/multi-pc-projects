@@ -1,35 +1,4 @@
-<template>
-  <a-menu
-    mode="inline"
-    :default-selected-keys="['1']"
-    :default-open-keys="['sub1']"
-  >
-    <template v-for="item in allMenuList">
-      <a-sub-menu
-        v-if="item.childern && item.children.length > 0"
-        :key="item.path"
-      >
-        <template>
-        </template>
-      </a-sub-menu>
-      <a-menu-item
-        v-else
-        :key="item.path"
-      >
-        {{item.meta.title}}
-      </a-menu-item>
-    </template>
-    <!-- <SidebarItem
-      v-for="route in allMenuList"
-      :key="route.path"
-      :item="route"
-    /> -->
-  </a-menu>
-</template>
-
 <script>
-import SidebarItem from './SidebarItem'
-
 export default {
   name: 'side-bar',
 
@@ -39,15 +8,51 @@ export default {
     }
   },
 
-  components: {
-    SidebarItem
-  },
-
   mounted() {
     const allRoutes = this.$router.options.routes
-    const allMenuList = allRoutes.filter(item => item.isMenu)
-    console.log(allMenuList, 222)
-    this.allMenuList = allMenuList
+    const allMenuList = allRoutes.filter(item => item.name !== undefined)
+    this.allMenuList = allMenuList[0].children
+  },
+
+  methods: {
+    renderSubMenu(subTitle, menuChildren) {
+      return (
+        <a-sub-menu>
+          <span slot="title">
+            <span>{subTitle}</span>
+          </span>
+          {menuChildren.map(menu => {
+            if (menu.children && menu.children.length > 0) {
+              this.renderSubMenu(menu.children)
+            } else {
+              return (
+                <a-menu-item key={menu.path}>
+                  <router-link to={menu.path}>{menu.meta.title}</router-link>
+                </a-menu-item>
+              )
+            }
+          })}
+        </a-sub-menu>
+      )
+    }
+  },
+
+  render() {
+    return (
+      <a-menu mode="inline">
+        {this.allMenuList.map(menu => {
+          if (menu.children && menu.children.length > 0) {
+            return this.renderSubMenu(menu.meta.title, menu.children)
+          } else {
+            return (
+              <a-menu-item key={menu.path}>
+                <router-link to={menu.path}>{menu.meta.title}</router-link>
+              </a-menu-item>
+            )
+          }
+        })}
+      </a-menu>
+    )
   }
 }
 </script>
