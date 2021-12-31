@@ -27,7 +27,9 @@ export default {
             } else {
               return (
                 <a-menu-item key={menu.path}>
-                  <router-link to={menu.path}>{menu.meta.title}</router-link>
+                  <router-link to={menu.path} exact>
+                    {menu.meta.title}
+                  </router-link>
                 </a-menu-item>
               )
             }
@@ -46,7 +48,9 @@ export default {
           } else {
             return (
               <a-menu-item key={menu.path}>
-                <router-link to={menu.path}>{menu.meta.title}</router-link>
+                <router-link to={menu.path} exact>
+                  {menu.meta.title}
+                </router-link>
               </a-menu-item>
             )
           }

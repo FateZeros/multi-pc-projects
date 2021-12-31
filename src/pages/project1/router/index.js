@@ -26,7 +26,7 @@ const routes = [
     children: [
       {
         path: '/home/dash-board',
-        name: 'dashboard',
+        name: 'dash-board',
         component: () => import('@/pages/project1/views/dash-board'),
         meta: {
           title: '首页'
@@ -40,7 +40,7 @@ const routes = [
         },
         children: [
           {
-            path: '/home/table/index',
+            path: '/home/table/test1',
             name: 'table-index',
             component: () => import('@/pages/project1/views/table'),
             meta: {
@@ -48,7 +48,7 @@ const routes = [
             }
           },
           {
-            path: '/home/table/index2',
+            path: '/home/table/test2',
             name: 'table-index2',
             component: () => import('@/pages/project1/views/table'),
             meta: {
